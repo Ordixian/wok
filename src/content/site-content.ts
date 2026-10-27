@@ -1,4 +1,13 @@
 export const siteContent = {
+  seo: {
+    title:
+      "ASK Geospatial Strategies Limited | Land Surveying & Geo-Information in Lagos",
+    description:
+      "SURCON-registered land surveying, cadastral mapping, C of O charting, engineering setting-out, and GIS services along the Ibeju-Lekki corridor and across Lagos, Nigeria.",
+    url: "https://askgeospatial.com",
+    siteName: "ASK Geospatial Strategies Limited",
+    locale: "en_NG",
+  },
   brand: {
     name: "ASK Geospatial Strategies Limited",
     shortName: "ASK Geospatial",
