@@ -154,14 +154,16 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-white text-[#111317] antialiased selection:bg-[#E30613] selection:text-white">
-      {/* TOP UTILITY BAR */}
-      <div className="hidden border-b border-white/10 bg-[#0B0D11] text-xs text-slate-300 lg:block">
+      {/* TOP UTILITY BAR (Fixed Contrast: Pure white readable text) */}
+      <div className="hidden border-b border-white/10 bg-[#0B0D11] text-xs text-white lg:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2.5">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <span className="inline-block h-2 w-2 rounded-full bg-[#E30613]" />
-              <span className="font-semibold text-white">Office:</span>{" "}
-              {DATA.brand.address}
+              <span className="font-semibold text-slate-300">Office:</span>{" "}
+              <span className="font-medium text-white">
+                {DATA.brand.address}
+              </span>
             </span>
           </div>
           <div className="flex items-center gap-5">
@@ -178,22 +180,42 @@ export default function Page() {
             >
               {DATA.brand.phones[1]}
             </a>
-            <span className="rounded bg-[#E30613]/15 px-2.5 py-0.5 text-[11px] font-semibold text-[#FF4D58]">
+            <span className="rounded bg-[#E30613]/20 px-2.5 py-0.5 text-[11px] font-bold text-[#FF6B73]">
               We are always open to serve you
             </span>
           </div>
         </div>
       </div>
 
-      {/* STICKY NAVBAR - Fixed logo clipping with proper container height */}
+      {/* STICKY NAVBAR with Clean Inline SVG Logo (No heavy black box) */}
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-          <a href="#" className="flex items-center py-1">
-            <img
-              src="/images/logo-light.svg"
-              alt={DATA.brand.name}
-              className="h-12 w-auto max-h-12 object-contain"
-            />
+          <a href="#" className="flex items-center gap-3.5 group">
+            {/* Clean SVG Logo Mark without bounding box */}
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#111317] p-1.5 shadow-sm">
+              <svg viewBox="0 0 36 36" className="h-full w-full" fill="none">
+                <path
+                  d="M10 6L18 14L10 22L2 14L10 6Z"
+                  stroke="#E30613"
+                  strokeWidth="3.5"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M20 14L28 22L20 30L12 22L20 14Z"
+                  stroke="#FFFFFF"
+                  strokeWidth="3.5"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+            <div className="flex flex-col justify-center">
+              <span className="font-black tracking-tight text-[#111317] text-sm sm:text-base leading-none">
+                ASK GEOSPATIAL
+              </span>
+              <span className="mt-1 font-bold tracking-widest text-[#E30613] text-[9px] sm:text-[10px] uppercase leading-none">
+                STRATEGIES LIMITED
+              </span>
+            </div>
           </a>
 
           <nav className="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
@@ -279,16 +301,13 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Right Column — Live CAD/RTK Survey Viewport (Green glow replaced with clean crimson technical accent) */}
+          {/* Right Column — Live CAD/RTK Survey Viewport (Green glow completely removed) */}
           <div className="relative lg:col-span-5">
             <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0D1017] p-6 text-white shadow-2xl">
               <div className="flex items-center justify-between border-b border-white/10 pb-4 text-xs">
-                <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#E30613]" />
-                  <span className="font-mono font-semibold uppercase tracking-wider text-slate-300">
-                    RTK GNSS / TOTAL STATION LOCK
-                  </span>
-                </div>
+                <span className="font-mono font-semibold uppercase tracking-wider text-slate-300">
+                  RTK GNSS / TOTAL STATION LOCK
+                </span>
                 <span className="rounded bg-[#E30613] px-2 py-0.5 font-mono text-[10px] font-bold text-white">
                   UTM ZONE 31N
                 </span>
@@ -763,11 +782,9 @@ export default function Page() {
 
           <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-slate-500 sm:flex-row">
             <div className="flex items-center gap-3">
-              <img
-                src="/images/logo-dark.svg"
-                alt={DATA.brand.name}
-                className="h-8 w-auto"
-              />
+              <span className="font-bold tracking-tight text-white">
+                ASK GEOSPATIAL
+              </span>
               <span>
                 © {new Date().getFullYear()} {DATA.brand.name}. All rights
                 reserved.
