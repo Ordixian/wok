@@ -1,4 +1,3 @@
-cat << 'EOF' > src/app/page.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -617,7 +616,7 @@ export default function Page() {
                 </p>
 
                 <div className="mt-8 space-y-4">
-                  <div className=" rounded-xl border border-white/10 bg-white/5 p-4">
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                     <div className="text-xs font-bold uppercase tracking-wider text-[#E30613]">
                       Lagos Office Address
                     </div>
@@ -631,10 +630,16 @@ export default function Page() {
                       Direct Survey Hotlines
                     </div>
                     <div className="mt-1 flex flex-col gap-1 text-sm font-bold text-white">
-                      <a href="tel:+2348061235341" className="hover:text-[#E30613]">
+                      <a
+                        href="tel:+2348061235341"
+                        className="hover:text-[#E30613]"
+                      >
                         +234 806 123 5341
                       </a>
-                      <a href="tel:+2348082929915" className="hover:text-[#E30613]">
+                      <a
+                        href="tel:+2348082929915"
+                        className="hover:text-[#E30613]"
+                      >
                         +234 808 292 9915
                       </a>
                     </div>
@@ -777,4 +782,3 @@ export default function Page() {
     </div>
   );
 }
-EOF
