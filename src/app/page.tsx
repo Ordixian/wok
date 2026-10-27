@@ -1,3 +1,4 @@
+cat << 'EOF' > src/app/page.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -132,7 +133,7 @@ const DATA = {
   ],
 };
 
-export default function HomePage() {
+export default function Page() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -237,7 +238,6 @@ export default function HomePage() {
         />
 
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-12">
-          {/* Left Column */}
           <div className="lg:col-span-7">
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#E30613]/25 bg-[#E30613]/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-[#E30613]">
               <span className="h-2 w-2 rounded-full bg-[#E30613]" />
@@ -278,26 +278,6 @@ export default function HomePage() {
                 Call +234 806 123 5341
               </a>
             </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-              <span className="font-bold uppercase tracking-wider text-slate-700">
-                Active Coverage:
-              </span>
-              {[
-                "Ibeju-Lekki",
-                "Lekki-Epe Expressway",
-                "Epe",
-                "Victoria Island / Ikoyi",
-                "Lagos Mainland",
-              ].map((area) => (
-                <span
-                  key={area}
-                  className="rounded-md border border-slate-200 bg-white px-2.5 py-1 font-medium text-slate-700"
-                >
-                  {area}
-                </span>
-              ))}
-            </div>
           </div>
 
           {/* Right Column — Live CAD/RTK Survey Viewport */}
@@ -326,17 +306,6 @@ export default function HomePage() {
                     d="M0 44H400M0 88H400M0 132H400M0 176H400M80 0V220M160 0V220M240 0V220M320 0V220"
                     stroke="rgba(255,255,255,0.06)"
                     strokeWidth="1"
-                  />
-                  <path
-                    d="M-20 180 C 90 120, 180 200, 420 90"
-                    stroke="rgba(255,183,3,0.22)"
-                    strokeWidth="1.5"
-                    strokeDasharray="4 4"
-                  />
-                  <path
-                    d="M-20 130 C 120 70, 220 150, 420 40"
-                    stroke="rgba(255,183,3,0.15)"
-                    strokeWidth="1.5"
                   />
                   <polygon
                     points="85,165 145,55 305,45 335,150 205,185"
@@ -382,33 +351,20 @@ export default function HomePage() {
 
               <div className="grid grid-cols-3 gap-3 text-center">
                 <div className="rounded-lg bg-white/5 p-3">
-                  <div className="text-xs font-bold text-[#FFB703]">
-                    OPTICAL
-                  </div>
-                  <div className="mt-0.5 text-xs text-slate-300">
-                    Total Station
-                  </div>
+                  <div className="text-xs font-bold text-[#FFB703]">OPTICAL</div>
+                  <div className="mt-0.5 text-xs text-slate-300">Total Station</div>
                 </div>
                 <div className="rounded-lg bg-white/5 p-3">
-                  <div className="text-xs font-bold text-[#E30613]">
-                    SATELLITE
-                  </div>
-                  <div className="mt-0.5 text-xs text-slate-300">
-                    Dual-Freq RTK
-                  </div>
+                  <div className="text-xs font-bold text-[#E30613]">SATELLITE</div>
+                  <div className="mt-0.5 text-xs text-slate-300">Dual-Freq RTK</div>
                 </div>
                 <div className="rounded-lg bg-white/5 p-3">
-                  <div className="text-xs font-bold text-emerald-400">
-                    AERIAL
-                  </div>
-                  <div className="mt-0.5 text-xs text-slate-300">
-                    UAV / LiDAR GIS
-                  </div>
+                  <div className="text-xs font-bold text-emerald-400">AERIAL</div>
+                  <div className="mt-0.5 text-xs text-slate-300">UAV / LiDAR GIS</div>
                 </div>
               </div>
             </div>
 
-            {/* Floating White Trust Badge */}
             <div className="relative z-10 mt-4 flex items-center justify-between rounded-xl border border-slate-200 bg-white px-5 py-3.5 shadow-lg sm:-mt-6 sm:mx-6">
               <div className="flex items-center gap-3">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#E30613] text-sm font-bold text-white">
@@ -445,7 +401,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES SECTION (Balanced 3x2 Grid) */}
+      {/* SERVICES SECTION */}
       <section id="services" className="bg-white py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-2xl text-center">
@@ -456,10 +412,6 @@ export default function HomePage() {
               Our <span className="text-[#E30613]">Geospatial</span> & Survey
               Services
             </h2>
-            <div className="mx-auto mt-4 flex h-1 w-24 overflow-hidden rounded-full">
-              <div className="w-1/2 bg-[#E30613]" />
-              <div className="w-1/2 bg-[#111317]" />
-            </div>
           </div>
 
           <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -468,11 +420,9 @@ export default function HomePage() {
                 key={srv.id}
                 className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#E30613]/40 hover:shadow-xl"
               >
-                <div className="absolute inset-x-0 top-0 h-1.5 rounded-t-2xl bg-slate-100 transition group-hover:bg-[#E30613]" />
-
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="rounded-md bg-slate-100 px-2.5 py-1 font-mono text-xs font-bold text-slate-600 group-hover:bg-[#E30613]/10 group-hover:text-[#E30613]">
+                    <span className="rounded-md bg-slate-100 px-2.5 py-1 font-mono text-xs font-bold text-slate-600">
                       SERVICE {srv.id}
                     </span>
                     <span className="text-lg font-bold text-[#E30613]">⊿</span>
@@ -506,7 +456,6 @@ export default function HomePage() {
               </div>
             ))}
 
-            {/* 6th Card: High-Contrast Crimson Land Verification Callout */}
             <div className="flex flex-col justify-between rounded-2xl bg-gradient-to-br from-[#E30613] to-[#9E0000] p-7 text-white shadow-xl">
               <div>
                 <span className="inline-block rounded-md bg-white/20 px-2.5 py-1 font-mono text-xs font-bold uppercase tracking-wider text-white">
@@ -542,7 +491,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FROM FIELD TO FINISH WORKFLOW */}
+      {/* WORKFLOW */}
       <section
         id="workflow"
         className="border-y border-slate-200 bg-[#F4F7F9] py-20"
@@ -555,10 +504,6 @@ export default function HomePage() {
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-[#111317] sm:text-4xl">
               From <span className="text-[#E30613]">Field</span> to Finish
             </h2>
-            <p className="mt-3 text-sm text-slate-600">
-              How our field crew and office GIS team bridge rugged site capture
-              with certified digital deliverables.
-            </p>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -644,22 +589,13 @@ export default function HomePage() {
                   integrity, and excellence in every survey. Every control point
                   is verified, and every boundary closes clean.”
                 </blockquote>
-
-                <div className="mt-6 flex items-center justify-between rounded-xl bg-white/5 px-4 py-3 text-xs">
-                  <span className="font-semibold text-slate-300">
-                    Base Office:
-                  </span>
-                  <span className="font-bold text-white">
-                    Ayeteju Bus Stop, Ibeju-Lekki
-                  </span>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CONTACT & SURVEY QUOTE COMMAND CENTER */}
+      {/* CONTACT & QUOTE SECTION */}
       <section
         id="contact"
         className="relative border-t-4 border-[#E30613] bg-[#0B0D11] py-20 text-white"
@@ -681,50 +617,29 @@ export default function HomePage() {
                 </p>
 
                 <div className="mt-8 space-y-4">
-                  <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E30613] text-base font-bold text-white">
-                      📍
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                        Lagos Office Address
-                      </div>
-                      <div className="mt-1 text-sm font-semibold text-white">
-                        {DATA.brand.address}
-                      </div>
+                  <div className=" rounded-xl border border-white/10 bg-white/5 p-4">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#E30613]">
+                      Lagos Office Address
+                    </div>
+                    <div className="mt-1 text-sm font-semibold text-white">
+                      {DATA.brand.address}
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4 rounded-xl border border-white/10 bg-white/5 p-4">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E30613] text-base font-bold text-white">
-                      📞
-                    </span>
-                    <div>
-                      <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                        Direct Survey Hotlines
-                      </div>
-                      <div className="mt-1 flex flex-col gap-1 text-sm font-bold text-white">
-                        <a
-                          href="tel:+2348061235341"
-                          className="hover:text-[#E30613]"
-                        >
-                          +234 806 123 5341
-                        </a>
-                        <a
-                          href="tel:+2348082929915"
-                          className="hover:text-[#E30613]"
-                        >
-                          +234 808 292 9915
-                        </a>
-                      </div>
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#E30613]">
+                      Direct Survey Hotlines
+                    </div>
+                    <div className="mt-1 flex flex-col gap-1 text-sm font-bold text-white">
+                      <a href="tel:+2348061235341" className="hover:text-[#E30613]">
+                        +234 806 123 5341
+                      </a>
+                      <a href="tel:+2348082929915" className="hover:text-[#E30613]">
+                        +234 808 292 9915
+                      </a>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="mt-8 rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-slate-400">
-                <strong className="text-white">Principal Surveyor:</strong>{" "}
-                {DATA.brand.principal}
               </div>
             </div>
 
@@ -795,9 +710,7 @@ export default function HomePage() {
                       }
                       className="w-full rounded-lg border border-slate-700 bg-white px-4 py-3 text-sm font-semibold text-[#111317] focus:border-[#E30613] focus:outline-none"
                     >
-                      <option value="" className="text-slate-500">
-                        Select Service...
-                      </option>
+                      <option value="">Select Service...</option>
                       <option value="Land & Boundary Surveying">
                         Land & Boundary Surveying
                       </option>
@@ -813,9 +726,6 @@ export default function HomePage() {
                       <option value="GIS, UAV Drone & Topographic Mapping">
                         GIS, UAV Drone & Topographic Mapping
                       </option>
-                      <option value="Real Estate General Consultancy">
-                        Real Estate General Consultancy
-                      </option>
                     </select>
                   </div>
                 </div>
@@ -827,7 +737,7 @@ export default function HomePage() {
                   <textarea
                     rows={4}
                     required
-                    placeholder="I would like to request a survey quote for a parcel of land located at... (include plot size or number of plots if known)"
+                    placeholder="I would like to request a survey quote for..."
                     value={formState.message}
                     onChange={(e) =>
                       setFormState({ ...formState, message: e.target.value })
@@ -867,3 +777,4 @@ export default function HomePage() {
     </div>
   );
 }
+EOF
