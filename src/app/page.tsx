@@ -185,14 +185,14 @@ export default function Page() {
         </div>
       </div>
 
-      {/* STICKY NAVBAR */}
+      {/* STICKY NAVBAR - Fixed logo clipping with proper container height */}
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center gap-3">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
+          <a href="#" className="flex items-center py-1">
             <img
               src="/images/logo-light.svg"
               alt={DATA.brand.name}
-              className="h-10 w-auto"
+              className="h-12 w-auto max-h-12 object-contain"
             />
           </a>
 
@@ -279,17 +279,17 @@ export default function Page() {
             </div>
           </div>
 
-          {/* Right Column — Live CAD/RTK Survey Viewport */}
+          {/* Right Column — Live CAD/RTK Survey Viewport (Green glow replaced with clean crimson technical accent) */}
           <div className="relative lg:col-span-5">
             <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0D1017] p-6 text-white shadow-2xl">
               <div className="flex items-center justify-between border-b border-white/10 pb-4 text-xs">
                 <div className="flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-emerald-400" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#E30613]" />
                   <span className="font-mono font-semibold uppercase tracking-wider text-slate-300">
                     RTK GNSS / TOTAL STATION LOCK
                   </span>
                 </div>
-                <span className="rounded bg-[#E30613] px-2 py-0.5 font-mono text-[10px] font-bold">
+                <span className="rounded bg-[#E30613] px-2 py-0.5 font-mono text-[10px] font-bold text-white">
                   UTM ZONE 31N
                 </span>
               </div>
@@ -344,7 +344,7 @@ export default function Page() {
                 <div className="mt-2 flex flex-wrap items-center justify-between border-t border-white/10 pt-3 font-mono text-[11px] text-slate-400">
                   <span>LAT: 06° 28&apos; 14.2&quot; N</span>
                   <span>LON: 03° 45&apos; 09.8&quot; E</span>
-                  <span className="text-emerald-400">CLOSURE: 1:100,000</span>
+                  <span className="text-[#FFB703]">CLOSURE: 1:100,000</span>
                 </div>
               </div>
 
@@ -358,7 +358,7 @@ export default function Page() {
                   <div className="mt-0.5 text-xs text-slate-300">Dual-Freq RTK</div>
                 </div>
                 <div className="rounded-lg bg-white/5 p-3">
-                  <div className="text-xs font-bold text-emerald-400">AERIAL</div>
+                  <div className="text-xs font-bold text-slate-300">AERIAL</div>
                   <div className="mt-0.5 text-xs text-slate-300">UAV / LiDAR GIS</div>
                 </div>
               </div>
